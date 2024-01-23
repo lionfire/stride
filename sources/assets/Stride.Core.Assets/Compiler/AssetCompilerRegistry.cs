@@ -187,7 +187,7 @@ namespace Stride.Core.Assets.Compiler
             }
             catch (Exception ex)
             {
-                log.Error(string.Format("Warning: Exception getting types from assembly '{0}'.  This is only a problem if this assembly may contain IAssetCompiler types that need to be registered.", assembly.FullName), ex);
+                log.Warning(string.Format("Exception getting types from assembly '{0}'.  This is only a problem if this assembly may contain IAssetCompiler types that need to be registered.", assembly.FullName), ex);
                 return;
             }
 
