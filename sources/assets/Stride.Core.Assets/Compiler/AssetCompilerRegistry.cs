@@ -180,8 +180,19 @@ namespace Stride.Core.Assets.Compiler
 
         private void RegisterCompilersFromAssembly(Assembly assembly)
         {
+            Type[] types;
+            try
+            {
+                types = assembly.GetTypes();
+            }
+            catch (Exception ex)
+            {
+                log.Error(string.Format("Warning: Exception getting types from assembly '{0}'.  This is only a problem if this assembly may contain IAssetCompiler types that need to be registered.", assembly.FullName), ex);
+                return;
+            }
+
             // Process Asset types.
-            foreach (var type in assembly.GetTypes())
+            foreach (var type in types)
             {
                 // Only process Asset types
                 if (!typeof(IAssetCompiler).IsAssignableFrom(type) || !type.IsClass)
