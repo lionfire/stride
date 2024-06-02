@@ -60,27 +60,27 @@ namespace Stride.Games
         /// <summary>
         /// The requested width.
         /// </summary>
-        internal int RequestedWidth;
+        public int RequestedWidth { get; set; }
 
         /// <summary>
         /// The requested height.
         /// </summary>
-        internal int RequestedHeight;
+        public int RequestedHeight { get; set; }
 
         /// <summary>
         /// The requested back buffer format.
         /// </summary>
-        internal PixelFormat RequestedBackBufferFormat;
+        public PixelFormat RequestedBackBufferFormat { get; set; }
 
         /// <summary>
         /// The requested depth stencil format.
         /// </summary>
-        internal PixelFormat RequestedDepthStencilFormat;
+        public PixelFormat RequestedDepthStencilFormat { get; set; }
 
         /// <summary>
         /// THe requested graphics profiles.
         /// </summary>
-        internal GraphicsProfile[] RequestedGraphicsProfile;
+        public GraphicsProfile[] RequestedGraphicsProfile { get; set; }
 
         /// <summary>
         /// The device creation flags that will be used to create the <see cref="GraphicsDevice"/>.
